@@ -1,0 +1,369 @@
+@font-face {
+    font-family: '8bitoperator JVE';
+    src: url('Font/8bitoperator-JVE.woff');
+}
+@font-face {
+    font-family: '8bitoperator Reg';
+	font-size: 100%;
+    src: url('Font/8bitOperatorPlus-Regular.woff');
+}
+
+img {
+    image-rendering: pixelated;
+}
+
+body {
+	background-color: black;
+	text-rendering: pixelated;
+}
+
+div.goner {
+	margin-left: -8px;
+	margin-top: -24px;
+    overflow-x: hidden;
+	overflow-y: hidden;
+    width: 100%;
+    height: 100%;
+}
+.goner {
+    position: fixed;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    z-index: 1;
+}
+@keyframes goner_anim {
+    0% {
+        scale: 0;
+        opacity: 0;
+        z-index: 2;
+
+    }
+
+    90% {
+        scale: 4.05;
+        opacity: 0.25;
+        z-index: 12;
+
+    }
+
+    100% {
+        scale: 4.5;
+        opacity: 0;
+        z-index: 22;
+
+    }
+
+}
+.goner.anim {
+	overflow-x: hidden;
+	overflow-y: hidden;
+    z-index: 2;
+    opacity: 0;
+    animation-name: goner_anim;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+	object-fit: cover;
+	min-height: 30%;
+	min-width: 30%;
+}
+
+.ue-tab21note {
+	pointer-events: none;
+	font-family: '8bitoperator JVE';
+	font-size: 16px;
+	color: white;
+	position: fixed;
+	vertical-align: top;
+	text-align: left;
+	margin-left: 6px;
+	margin-top: -12px;
+	width: 320px;
+	opacity: 0;
+	transition: opacity 0.15s ease-out 0ms;
+}
+.ue-tab21 {
+	position: fixed;
+	vertical-align: top;
+	text-align: left;
+	width: 224px;
+	height: 120px;
+	right: -80px;
+	transition: right 0.15s ease-out 0ms;
+	z-index: 10;
+}
+.ue-tab21:hover {
+	right: -0px;
+}
+.ue-tab21:hover > .ue-tab21note {
+	opacity: 1;
+}
+.ue-tab22 {
+	position: fixed;
+	vertical-align: top;
+	text-align: left;
+	width: 224px;
+	height: 120px;
+	top: 136px;
+	right: -80px;
+	transition: right 0.15s ease-out 0ms;
+	z-index: 9;
+}
+.ue-tab22:hover {
+	right: -0px;
+}
+
+.nav-tab {
+	position: fixed;
+	float: left;
+	vertical-align: top;
+	width: 404px;
+	height: 120px;
+	left: -280px;
+	transition: left 0.15s ease-out 0ms;
+	z-index: 10;
+}
+.nav-tab-name {
+	pointer-events: none;
+	position: absolute;
+	color: white;
+	font-family: '8bitoperator JVE';
+	font-size: 48px;
+	text-align: left;
+	margin-left: 104px;
+	margin-top: 20px;
+}
+.nav-tab-desc {
+	pointer-events: none;
+	position: absolute;
+	font-family: '8bitoperator JVE';
+	color: gray;
+	width: 190px;
+	font-size: 16px;
+	text-align: left;
+	margin-left: 106px;
+	margin-top: 64px;
+	opacity: 0;
+	transition: opacity 0.15s ease-out 0ms;
+	
+}
+.nav-tab.home {
+	
+}
+.nav-tab.projects {
+	top: 136px;
+}
+.nav-tab.team {
+	top: 248px;
+}
+.nav-tab.links {
+	top: 360px;
+}
+.nav-tab:hover {
+	left: -80px;
+}
+.nav-tab:hover > .nav-tab-desc {
+	opacity: 1;
+}
+
+.logo-large {
+	margin-top: 24px;
+	margin-bottom: 24px;
+	position: relative;
+	width:430px;
+    color: white;
+	margin-left: auto;
+    margin-right: auto;
+	z-index: 10;
+}
+
+.t_base {
+	position: relative;
+	width:612px;
+    color: white;
+    font-family: '8bitoperator JVE';
+	font-size: 32px;
+    text-align:center;
+	margin-left: auto;
+    margin-right: auto;
+	z-index: 10;
+}
+.textbox {
+	background-color: black;
+	border-style: solid;
+	border-color: white;
+	border-width: 6px;
+}
+.t_tb { 
+	text-indent: -24px;
+	line-height: 36px;
+	text-align: left;
+	padding-left: 56px;
+	padding-right: 32px;
+	margin-top: 16px;
+	margin-bottom: 16px;
+}.t_tb:before {
+	content: "* "
+}
+.t_ye {
+	color: yellow;
+}
+
+.soul-elem {
+	margin-left: -8px;
+	margin-top: -8px;
+	position: absolute;
+	pointer-events: none;
+	opacity: 0;
+	z-index: 15;
+	overflow-x: hidden;
+	overflow-y: hidden;
+    animation-name: soul-elem_anim;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+	transition: opacity 0.5s ease-out 0ms;
+	align-items: center;
+	justify-content: center;
+}
+@keyframes soul-elem_anim {
+    0% {
+		left: 2px;
+		top: 0px;
+    }
+	13% {
+		left: 1.5px;
+		top: 1.5px;
+    }
+	25% {
+		left: 0px;
+		top: 2px;
+    }
+	38% {
+		left: -3px;
+		top: 2px;
+    }
+	50% {
+		left: -4px;
+		top: 0px;
+    }
+	63% {
+		left: -3px;
+		top: -3px;
+    }
+	75% {
+		left: 0px;
+		top: -4px;
+    }
+	88% {
+		left: 1.5px;
+		top: -3px;
+    }
+	100% {
+		left: 2px;
+		top: 0px;
+    }
+
+}
+
+.social-div { 
+	width: 320px;
+	position: relative;
+    color: white;
+	margin-left: auto;
+    margin-right: auto;
+	margin-bottom: 96px;
+	align-items: center;
+	justify-content: center;
+	z-index: 10;
+}
+.social-ico-ico {
+	position: absolute;
+	width: 50px;
+	height: 42px;
+	filter: brightness(0.5);
+	transition: filter 0.25s ease-out 0ms;
+	z-index: 20;
+}
+.social-ico {
+	position: absolute;
+}
+.social-ico.ico1 {
+	position: absolute;
+}
+.social-ico.ico2 {
+	position: absolute;
+	margin-left: 93px;
+}
+.social-ico.ico3 {
+	position: absolute;
+	margin-left: 186px;
+}
+.social-ico.ico4 {
+	position: absolute;
+	margin-left: 279px;
+}
+.social-name {
+	position: absolute;
+	pointer-events: none;
+	color: white;
+    font-family: '8bitoperator JVE';
+	font-size: 48px;
+    text-align:center;
+	margin-left: auto;
+    margin-right: auto;
+	margin-top: 44px;
+	width: 207px;
+	left: 0;
+	right: 0;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: opacity 0.25s ease-out 0ms;
+	overflow-x: hidden;
+	overflow-y: hidden;
+    animation: social-name_anim 0.25s steps(1) infinite;
+	z-index: 16;
+}
+.social-name.name1 {
+	position: absolute;
+	margin-left: 55px;
+}
+.social-name.name2 {
+	position: absolute;
+	margin-left: -38px;
+}
+.social-name.name3 {
+	position: absolute;
+	margin-left: -131px;
+}
+.social-name.name4 {
+	position: absolute;
+	margin-left: -224px;
+}
+@keyframes social-name_anim {
+	0% { transform: translate(1px, 1px)}
+	10% { transform: translate(-1px, -2px)}
+	20% { transform: translate(-2px, 0px)}
+	30% { transform: translate(2px, 1px)}
+	40% { transform: translate(1px, -1px)}
+	50% { transform: translate(-1px, 2px)}
+	60% { transform: translate(-2px, 1px)}
+	70% { transform: translate(2px, 1px)}
+	80% { transform: translate(-1px, -1px)}
+	90% { transform: translate(2px, 2px)}
+	100% { transform: translate(1px, -2px)}
+}
+.social-ico:hover > .soul-elem {
+	opacity: 0.75;
+}
+.social-ico:hover > .social-ico-ico{
+	filter: brightness(1);
+}
+.social-ico:hover > .social-name {
+	opacity: 1;
+}
+
